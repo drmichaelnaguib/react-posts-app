@@ -1,30 +1,31 @@
+import PostsList from "./components/PostsList";
 import MainHeader from "./components/layout/MainHeader";
-import Post from "./components/Post";
 import { useState } from "react";
 
 function App() {
-  const [isAppeared, setIsAppeared] = useState(true);
-  const toggleHandler = () => {
-    setIsAppeared(!isAppeared);
-  };
+  const [isPostsListVisible, setIsPostsListVisible] = useState(true);
+  const [counter, setCounter] = useState(0);
 
+  function buttonClickHandler() {
+    setIsPostsListVisible(!isPostsListVisible);
+  }
+  function incrementHandler() {
+    setCounter(counter + 1);
+  }
+  // function renderPostsList() {
+  //   if (isPostsListVisible) return <PostsList />;
+  //   return null;
+  // }
+  // const renderPostsList = () => (isPostsListVisible ? <PostsList /> : null);
   return (
     <div>
       <MainHeader />
-      <Post title="Post 1" description="des 1" />
-      <Post title="Post 2" description="des 2" />
-      <Post title="Post 3" description="des 3" />
-      <Post title="Post 4" description="des 4" />
-      {isAppeared && (
-        <div style={{ color: "white", marginTop: "50px" }}>toggle div</div>
-      )}
-      <button
-        type="button"
-        style={{ marginTop: "50px", cursor: "pointer" }}
-        onClick={toggleHandler}
-      >
-        Toggle
-      </button>
+      {/* {renderPostsList()} */}
+      {/* {isPostsListVisible ? <PostsList /> : null} */}
+      {isPostsListVisible && <PostsList />}
+      <button onClick={buttonClickHandler}>Click me!</button>
+      <p style={{ color: "white" }}>{counter}</p>
+      <button onClick={incrementHandler}> increment by 1</button>
     </div>
   );
 }

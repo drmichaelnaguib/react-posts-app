@@ -4,6 +4,10 @@
   border-radius: 4px;
 }
 
+.post:hover {
+  background-color: red;
+}
+
 .title {
   color: white;
   font-size: 22px;
