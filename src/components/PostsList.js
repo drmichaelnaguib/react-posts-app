@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Post2 from "./Post2"
 import styles from "./PostsList.module.css"
 import Wrapper from "./ui/Wrapper"
@@ -22,3 +23,19 @@ function PostsList(props) {
     )
 }
 export default PostsList
+=======
+import Post from "./Post";
+
+const PostsList = () => {
+  return (
+    <div>
+      <Post title="Post 1" description="des 1" />
+      <Post title="Post 2" description="des 2" />
+      <Post title="Post 3" description="des 3" />
+      <Post title="Post 4" description="des 4" />
+    </div>
+  );
+};
+
+export default PostsList;
+>>>>>>> e28124b6c24adea9945dba9444970492300f8c86
