@@ -1,30 +1,35 @@
-import MainHeader from "./components/layout/MainHeader";
-import Post from "./components/Post";
+import MainHeader from "./components/layout/MainHeader"
 import { useState } from "react";
+import PostsList from "./components/PostsList";
+
+const postsItems = [
+  { title: "post one", content: "desc one" },
+  { title: "post two", content: "desc two" },
+  { title: "post three", content: "desc three" },
+  { title: "post four", content: "desc four" },
+  { title: "post five", content: "desc five" },
+  { title: "post six", content: "desc six" },
+  { title: "post seven", content: "desc seven" },
+  { title: "post eight", content: "desc eight" },
+]
 
 function App() {
-  const [isAppeared, setIsAppeared] = useState(true);
-  const toggleHandler = () => {
-    setIsAppeared(!isAppeared);
-  };
+
+  // lazem nesta5dem ay hook gwa el functional component
+  // const [isAppeared, setIsAppeared] = useState(true)
+  // let toggledContent= <div style={{color: "white"}}>text to be toggled</div>
+  // if (isAppeared===false){
+  //   toggledContent=null
+  // }
+
 
   return (
     <div>
       <MainHeader />
-      <Post title="Post 1" description="des 1" />
-      <Post title="Post 2" description="des 2" />
-      <Post title="Post 3" description="des 3" />
-      <Post title="Post 4" description="des 4" />
-      {isAppeared && (
-        <div style={{ color: "white", marginTop: "50px" }}>toggle div</div>
-      )}
-      <button
-        type="button"
-        style={{ marginTop: "50px", cursor: "pointer" }}
-        onClick={toggleHandler}
-      >
-        Toggle
-      </button>
+      <PostsList posts={postsItems} />
+      {/* {isAppeared?<div style={{color: "white"}}>text to be toggled</div>:null} */}
+      {/* {isAppeared && <div style={{color: "white"}}>text to be toggled</div>} */}
+      {/* <button type="button" onClick={()=>{setIsAppeared(!isAppeared)}}>Toggle</button> */}
     </div>
   );
 }
